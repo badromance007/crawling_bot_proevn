@@ -143,6 +143,7 @@ def get_page_details(paths, product_codes, logs_foder):
     download_fail_count = 0
     download_status = True
     for i, image_url in enumerate(image_urls):
+      image_url = image_url.replace('small', 'grande')
       if i == 0:
         download_status = download(image_url, f"images", product_codes[index + crawled_index_at]) # download first images
         if download_status == False:
